@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
-"""Entrypoint for news-image-20261126.
+"""Entrypoint for news-image-20261126 (fix pass 1).
 
 What it does, in order:
   1. Checks build/front.html exists and passes the marker gate: a list of
      strings that must appear (edition date, hero banners, legend wording,
-     DATE CHECK items) and a list that must never appear (wrong-edition
-     dates, placeholder text).
-  2. Verifies the repo-root entry.png byte by byte: PNG signature, IHDR
+     DATE CHECK items, fix-pass-1 corrections) and a list that must never
+     appear (wrong-edition dates, superseded fix-pass-1 wording,
+     placeholder text).
+  2. Self-checks the page structure: exactly 13 numbered map pins, one
+     per hero/card story (01-13); 18 badge chips (13 story badges + 4
+     legend chips + 1 CLAIM chip on the Hormuz inset); every card 04-13
+     carries its story number beside its source kicker; the ALSO list
+     holds 14 rows split 7 and 7 across two columns; the "ORIGINAL
+     VECTOR ILLUSTRATIONS" note appears exactly once and sits in the map
+     title, not over the ALSO columns.
+  3. Verifies the repo-root entry.png byte by byte: PNG signature, IHDR
      exactly 1024x1024, 8-bit depth, palette colour type, CRC of every
      chunk, total size at most 1 MiB.
-  3. Copies entry.png unchanged to $MAKEFUN_OUTPUT_DIR/entry.png
+  4. Copies entry.png unchanged to $MAKEFUN_OUTPUT_DIR/entry.png
      (default /output/entry.png), writing with mode 0644, then re-reads
      the published copy and proves it is byte-identical (same SHA-256).
 
@@ -31,7 +39,11 @@ MAX_BYTES = 1024 * 1024
 MUST_APPEAR = [
     "26 NOVEMBER 2026",
     "THURSDAY",
-    "RAS TANURA HIT",
+    # Fix pass 1: hero 01 banner now names the Thursday follow-on
+    # (Red Sea port strikes), not the Wednesday first claim.
+    "RED SEA PORTS HIT",
+    "first refinery claim Wed 25 Nov",
+    "two tankers mined.",
     "IRREVERSIBLE",
     "13 DEAD, 13 TRAPPED",
     # Full legend wording — never the truncated "one side's" alone.
@@ -48,6 +60,16 @@ MUST_APPEAR = [
     "13 + 13",
     "HOW SURE ARE WE?",
     "CONFIRMED 10 &middot; OFFICIAL 5 &middot; REPORTED 11 &middot; CLAIM 1",
+    # Fix pass 1 corrections.
+    "Australia Digital Duty of Care",
+    "convicted of new charges",
+    "Tariff hearing 25&nbsp;Jan&nbsp;2027",
+    "15:00 LOCAL",
+    "US STATE DEPT",
+    # Fix pass 1: stat band second facts (research-only).
+    "3 CRITICAL",
+    "2ND-LARGEST OUTBREAK",
+    "&euro;45BN FOR UKRAINE",
 ]
 
 MUST_NOT_APPEAR = [
@@ -61,6 +83,13 @@ MUST_NOT_APPEAR = [
     "SPDX-License-Identifier",
     "24 Nov 2026",
     "25 Nov 2026",
+    # Superseded fix-pass-1 wording.
+    "RAS TANURA HIT",                  # old hero 01 banner (Wed claim)
+    "two tankers hit mines",           # old dek grammar
+    "MORNING WEST JAVA RESCUE HALT",   # moved out of the UTC strip
+    "Australia Duty of Care &mdash;",   # missing "Digital"
+    "BRUSSELS &middot; 26&ndash;27 NOV",  # old #08 dateline kicker
+    "tariff hearing 25 Jan.",          # old lowercase, yearless NOT YET
 ]
 
 
@@ -86,15 +115,46 @@ def check_front_html():
     if pins != 13:
         return fail("front.html has %d map pins, expected 13" % pins)
     # Self-check: every hero and card carries exactly one badge chip.
-    # The legend itself holds one chip of each kind, so hero/card chips
-    # must number 3 + 10 = 13.
+    # The legend holds one chip of each kind and the Hormuz inset holds
+    # one CLAIM chip, so chips must number 13 + 4 + 1 = 18.
     chips = (text.count('chip cnf') + text.count('chip off')
              + text.count('chip rep') + text.count('chip clm'))
-    if chips != 13 + 4:
-        return fail("front.html has %d badge chips, expected 17 (13 stories + 4 legend)"
-                    % chips)
+    if chips != 13 + 4 + 1:
+        return fail("front.html has %d badge chips, expected 18 "
+                    "(13 stories + 4 legend + 1 Hormuz inset)" % chips)
+    # Self-check: every card 04-13 carries its story number beside its
+    # source kicker, exactly once each.
+    for number in ("04", "05", "06", "07", "08", "09", "10",
+                   "11", "12", "13"):
+        marker = '<span class="num">%s</span>' % number
+        if text.count(marker) != 1:
+            return fail("front.html has %d card-number spans for %s, "
+                        "expected 1" % (text.count(marker), number))
+    # Self-check: the ALSO list holds 14 rows, split 7 and 7 across two
+    # columns, and the illustrations note sits in the map title only.
+    also_start = text.index("ALSO ON THURSDAY")
+    also_end = text.index("DATE CHECK", also_start)
+    also_rows = text.count("<div><b>", also_start, also_end)
+    if also_rows != 14:
+        return fail("front.html ALSO section has %d rows, expected 14"
+                    % also_rows)
+    first_col = text.index('<div class="col">', also_start)
+    second_col = text.index('<div class="col">', first_col + 1)
+    col1_rows = text.count("<div><b>", first_col, second_col)
+    col2_rows = text.count("<div><b>", second_col, also_end)
+    if (col1_rows, col2_rows) != (7, 7):
+        return fail("front.html ALSO columns hold %d and %d rows, "
+                    "expected 7 and 7" % (col1_rows, col2_rows))
+    if text.count("ORIGINAL VECTOR ILLUSTRATIONS") != 1:
+        return fail("front.html has %d illustration notes, expected 1"
+                    % text.count("ORIGINAL VECTOR ILLUSTRATIONS"))
+    if text.index("ORIGINAL VECTOR ILLUSTRATIONS") > also_start:
+        return fail("illustrations note sits after the ALSO title, "
+                    "expected it in the map title")
     print("front.html: marker gate passed (%d required, %d forbidden); "
-          "13 map pins, 13 story badges" % (len(MUST_APPEAR), len(MUST_NOT_APPEAR)))
+          "13 map pins, 13 story badges + 4 legend + 1 inset chips, "
+          "card numbers 04-13 present, ALSO 7 + 7"
+          % (len(MUST_APPEAR), len(MUST_NOT_APPEAR)))
     return 0
 
 

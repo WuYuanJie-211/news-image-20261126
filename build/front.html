@@ -3,7 +3,7 @@
      a dense hero/card zone packs the middle, the map + ALSO list run the
      bottom. Pure illustration, zero photos. Four colours only:
      ivory paper #f6f1e5, ink #1c1712, red #b3231b, navy #16324f.
-     Two families: Noto Serif Display (headlines/body) + DejaVu Sans (labels).
+     Two families: Noto Serif (headlines/body) + DejaVu Sans (labels).
      Source canvas 2048x2048, rendered at 1024x1024 (all sizes below are
      source px = 2x render px). -->
 <html lang="en"><head><meta charset="utf-8">
@@ -13,33 +13,33 @@
 :root{--paper:#f6f1e5;--ink:#1c1712;--red:#b3231b;--navy:#16324f}
 body{background:var(--paper)}
 .page{width:2048px;height:2048px;background:var(--paper);color:var(--ink);
-  font-family:"Noto Serif Display","Noto Serif",serif;padding:10px 36px 10px;
+  font-family:"Noto Serif",serif;padding:10px 36px 10px;
   overflow:hidden}
-.serif{font-family:"Noto Serif Display","Noto Serif",serif}
+.serif{font-family:"Noto Serif",serif}
 .sans{font-family:"DejaVu Sans",sans-serif}
 .rule{height:4px;background:var(--ink)}
 .rule.red{height:4px;background:var(--red)}
 .rule.thin{height:2px;background:var(--ink)}
 /* masthead */
 .mast{display:flex;justify-content:space-between;align-items:baseline;
-  padding-bottom:2px}
+  padding-bottom:1px}
 .mast .l{font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:30px;
   letter-spacing:6px}
 .mast .r{font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:28px}
 .mast .r b{color:var(--red)}
 .weekday{text-align:center;color:var(--red);font-weight:900;font-size:44px;
-  letter-spacing:26px;padding:2px 0 0 26px}
+  letter-spacing:26px;padding:1px 0 0 26px}
 .date{text-align:center;font-weight:900;font-size:94px;line-height:1.02;
   letter-spacing:2px}
 .tagline{text-align:center;font-family:"DejaVu Sans",sans-serif;font-size:26px;
-  letter-spacing:3px;padding:6px 0 8px}
-.seq{display:flex;gap:14px;margin:2px 0 5px}
+  letter-spacing:3px;padding:4px 0 4px}
+.seq{display:flex;gap:14px;margin:1px 0 3px}
 .seq div{flex:1;text-align:center;font-family:"DejaVu Sans",sans-serif;
-  font-weight:bold;font-size:26px;padding:6px 0;border:3px solid var(--ink)}
+  font-weight:bold;font-size:26px;padding:5px 0;border:3px solid var(--ink)}
 .seq div.on{background:var(--red);border-color:var(--red);color:var(--paper)}
 /* number band */
 .nums{display:flex;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
-.nums .cell{flex:1;text-align:center;padding:5px 6px 7px;
+.nums .cell{flex:1;text-align:center;padding:4px 6px 5px;
   border-left:2px solid var(--ink)}
 .nums .cell:first-child{border-left:none}
 .nums .n{color:var(--red);font-weight:900;font-size:48px;line-height:1.05}
@@ -52,7 +52,7 @@ body{background:var(--paper)}
 .strip .dot{font-size:22px}
 .strip .clock{font-size:20px}
 /* HOW SURE legend */
-.legend{border:4px solid var(--ink);padding:5px 16px 7px;margin-bottom:8px}
+.legend{border:4px solid var(--ink);padding:4px 16px 5px;margin-bottom:4px}
 .legend h2{display:flex;justify-content:space-between;align-items:baseline;font-family:"DejaVu Sans",sans-serif;font-size:24px;letter-spacing:2px}
 .legend h2 .tally{font-size:22px;letter-spacing:0}
 .legend h2 .tally b{color:var(--red)}
@@ -87,15 +87,15 @@ body{background:var(--paper)}
 
 <div class="nums">
 <div class="cell"><div class="n">13 + 13</div><div class="t">DEAD &middot; TRAPPED &mdash; INDONESIA</div></div>
-<div class="cell"><div class="n">9</div><div class="t">HURT &mdash; BANGKOK BLAST</div></div>
+<div class="cell"><div class="n">9</div><div class="t">3 CRITICAL &mdash; BANGKOK</div></div>
 <div class="cell"><div class="n">~$95</div><div class="t">BRENT &mdash; HORMUZ</div></div>
-<div class="cell"><div class="n">12,000+</div><div class="t">EBOLA CASES &mdash; DRC</div></div>
+<div class="cell"><div class="n">12,000+</div><div class="t">2ND-LARGEST OUTBREAK</div></div>
 <div class="cell"><div class="n">3.25%</div><div class="t">BANK OF KOREA RATE</div></div>
-<div class="cell"><div class="n">&euro;1.7TN</div><div class="t">EU BUDGET DEAL</div></div>
+<div class="cell"><div class="n">&euro;1.7TN</div><div class="t">&euro;45BN FOR UKRAINE</div></div>
 </div>
 
 <div class="strip"><span><span class="dot" style="color:#b3231b">&#9679;</span> MIDDLE EAST 5 &nbsp;<span class="dot" style="color:#16324f">&#9679;</span> ASIA 9 &nbsp;<span class="dot" style="color:#1c1712">&#9679;</span> AFRICA 4 &nbsp;<span class="dot" style="color:#b3231b">&#9679;</span> EUROPE 7 &nbsp;<span class="dot" style="color:#16324f">&#9679;</span> AMERICAS 1 &nbsp;<span class="dot" style="color:#1c1712">&#9679;</span> GLOBAL 1</span>
-<span class="clock">15:00 BANGKOK BLAST &middot; MORNING WEST JAVA RESCUE HALT</span></div>
+<span class="clock">15:00 LOCAL &middot; BANGKOK BLAST</span></div>
 
 <div class="legend">
 <h2><span>HOW SURE ARE WE? <span>&mdash; EVERY STORY CARRIES A BADGE</span></span><span class="tally"><b>CNF 10 &middot; OFF 5 &middot; REP 11 &middot; CLAIM 1 = 27</b></span></h2>
@@ -114,23 +114,24 @@ body{background:var(--paper)}
   padding:2px 10px;font-family:"DejaVu Sans",sans-serif;font-weight:bold;
   font-size:22px}
 .hero .kick .no{color:var(--red);font-size:26px}
-.hero .art{height:108px;background:var(--navy);position:relative;overflow:hidden}
+.hero .art{height:104px;background:var(--navy);position:relative;overflow:hidden}
 .hero .art svg{width:100%;height:100%;display:block}
 .hero .banner{background:var(--red);color:var(--paper);text-align:center;
-  font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:30px;
+  font-family:"Noto Serif",serif;font-weight:900;font-size:30px;
   letter-spacing:2px;padding:3px 4px}
-.hero h3{font-size:42px;line-height:1.12;font-weight:900;padding:6px 12px 4px;height:104px;overflow:hidden}
-.hero p{font-size:25px;line-height:1.27;padding:0 12px 8px;height:62px;overflow:hidden}
+.hero h3{font-size:42px;line-height:1.12;font-weight:900;padding:5px 12px 3px;height:100px;overflow:hidden}
+.hero p{font-size:25px;line-height:1.27;padding:0 12px 6px;height:62px;overflow:hidden}
 /* cards */
-.cards{display:flex;gap:16px;margin-top:6px}
+.cards{display:flex;gap:16px;margin-top:4px}
 .card{flex:1;border:3px solid var(--ink)}
-.card .art{height:92px;background:var(--navy);position:relative;overflow:hidden}
+.card .art{height:88px;background:var(--navy);position:relative;overflow:hidden}
 .card .art svg{width:100%;height:100%;display:block}
 .card .art .badge{position:absolute;top:6px;right:6px}
 .card .art .src{position:absolute;left:8px;top:5px;color:var(--paper);
-  font-family:"DejaVu Sans",sans-serif;font-size:20px;letter-spacing:1px}
-.card h4{font-size:32px;line-height:1.12;font-weight:900;padding:6px 10px 2px;height:80px;overflow:hidden}
-.card p{font-size:24px;line-height:1.25;padding:3px 10px 6px;height:64px;overflow:hidden}
+  font-family:"DejaVu Sans",sans-serif;font-size:18px;letter-spacing:1px}
+.card .art .src .num{font-size:24px}
+.card h4{font-size:32px;line-height:1.12;font-weight:900;padding:5px 10px 2px;height:76px;overflow:hidden}
+.card p{font-size:24px;line-height:1.25;padding:2px 10px 5px;height:60px;overflow:hidden}
 </style>
 
 <div class="heroes">
@@ -151,9 +152,9 @@ body{background:var(--paper)}
 <text x="20" y="30" fill="#f6f1e5" font-family="DejaVu Sans" font-size="22" font-weight="bold" letter-spacing="2">RAS TANURA</text>
 <text x="300" y="30" fill="#f6f1e5" font-family="DejaVu Sans" font-size="22" font-weight="bold" letter-spacing="2">STRAIT OF HORMUZ</text>
 </svg></div>
-<div class="banner">RAS TANURA HIT</div>
+<div class="banner">RED SEA PORTS HIT</div>
 <h3>MINES IN THE STRAIT</h3>
-<p>Houthis claim a hit on Saudi Arabia&rsquo;s top refinery; two tankers hit mines in Hormuz.</p>
+<p>Houthis claim strikes on Jizan and Jeddah ports; first refinery claim Wed 25 Nov; two tankers mined.</p>
 </div>
 
 <div class="hero">
@@ -209,7 +210,7 @@ body{background:var(--paper)}
 <circle cx="250" cy="52" r="26" fill="#b3231b"/><circle cx="282" cy="66" r="18" fill="#b3231b"/>
 <path d="M230 96 q14 -10 28 0 t28 0" fill="none" stroke="#f6f1e5" stroke-width="4"/>
 <text x="150" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="34" font-weight="bold">9 HURT</text>
-</svg><span class="src">REUTERS &middot; AP</span></div>
+</svg><span class="src"><span class="num">04</span> REUTERS &middot; AP</span></div>
 <h4>BANGKOK REFINERY BLAST</h4>
 <p>Bangchak blast injures nine, three critically.</p>
 </div>
@@ -224,7 +225,7 @@ body{background:var(--paper)}
 <circle cx="250" cy="46" r="20" fill="#b3231b"/><circle cx="292" cy="58" r="13" fill="#b3231b"/>
 <rect x="230" y="78" width="110" height="8" fill="#f6f1e5"/>
 <text x="150" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="34" font-weight="bold">9 KILLED</text>
-</svg><span class="src">REUTERS &middot; AP</span></div>
+</svg><span class="src"><span class="num">05</span> REUTERS &middot; AP</span></div>
 <h4>GAZA: 9 KILLED OVERNIGHT</h4>
 <p>Nine killed overnight, a third straight night of strikes.</p>
 </div>
@@ -237,7 +238,7 @@ body{background:var(--paper)}
 <rect x="60" y="40" width="70" height="26" fill="#b3231b"/><rect x="140" y="40" width="70" height="26" fill="#f6f1e5"/>
 <text x="248" y="88" fill="#f6f1e5" font-family="DejaVu Sans" font-size="52" font-weight="bold">%</text>
 <text x="130" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="30" font-weight="bold">14 PARTNERS</text>
-</svg><span class="src">REUTERS &middot; USTR</span></div>
+</svg><span class="src"><span class="num">06</span> REUTERS &middot; USTR</span></div>
 <h4>TARIFF FALLOUT</h4>
 <p>Japan protests the 15% levy; India faces 25% or 17%.</p>
 </div>
@@ -252,7 +253,7 @@ body{background:var(--paper)}
 <line x1="210" y1="30" x2="330" y2="100" stroke="#b3231b" stroke-width="8"/>
 <circle cx="250" cy="50" r="9" fill="#b3231b"/><circle cx="300" cy="70" r="9" fill="#b3231b"/>
 <text x="120" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="26" font-weight="bold">4 COUNTRIES CUT</text>
-</svg><span class="src">FINANCIAL TIMES</span></div>
+</svg><span class="src"><span class="num">07</span> FINANCIAL TIMES</span></div>
 <h4>NVIDIA HALTS SHIPMENTS</h4>
 <p>Nvidia orders Dell, Supermicro to halt shipments.</p>
 </div>
@@ -261,12 +262,12 @@ body{background:var(--paper)}
 <div class="art"><span class="badge chip off">OFF</span><svg viewBox="0 0 380 138">
 <rect x="0" y="0" width="380" height="138" fill="#16324f"/>
 <rect x="0" y="104" width="380" height="34" fill="#1c1712"/>
-<circle cx="105" cy="70" r="36" fill="none" stroke="#f6f1e5" stroke-width="4"/>
-<circle cx="105" cy="34" r="4" fill="#f6f1e5"/><circle cx="130" cy="45" r="4" fill="#f6f1e5"/><circle cx="141" cy="70" r="4" fill="#f6f1e5"/><circle cx="130" cy="95" r="4" fill="#f6f1e5"/><circle cx="105" cy="106" r="4" fill="#f6f1e5"/><circle cx="80" cy="95" r="4" fill="#f6f1e5"/><circle cx="69" cy="70" r="4" fill="#f6f1e5"/><circle cx="80" cy="45" r="4" fill="#f6f1e5"/>
+<circle cx="170" cy="70" r="36" fill="none" stroke="#f6f1e5" stroke-width="4"/>
+<circle cx="170" cy="34" r="4" fill="#f6f1e5"/><circle cx="195" cy="45" r="4" fill="#f6f1e5"/><circle cx="206" cy="70" r="4" fill="#f6f1e5"/><circle cx="195" cy="95" r="4" fill="#f6f1e5"/><circle cx="170" cy="106" r="4" fill="#f6f1e5"/><circle cx="145" cy="95" r="4" fill="#f6f1e5"/><circle cx="134" cy="70" r="4" fill="#f6f1e5"/><circle cx="145" cy="45" r="4" fill="#f6f1e5"/>
 <rect x="230" y="40" width="110" height="64" fill="#f6f1e5"/>
 <rect x="244" y="52" width="14" height="40" fill="#16324f"/><rect x="270" y="52" width="14" height="40" fill="#16324f"/><rect x="296" y="52" width="14" height="40" fill="#16324f"/>
 <text x="130" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="34" font-weight="bold">&euro;1.7TN</text>
-</svg><span class="src">BRUSSELS &middot; 26&ndash;27 NOV</span></div>
+</svg><span class="src"><span class="num">08</span> REUTERS</span></div>
 <h4>EU SUMMIT IN BRUSSELS</h4>
 <p>Leaders meet on a &euro;1.7tn budget and &euro;45bn for Ukraine.</p>
 </div>
@@ -282,7 +283,7 @@ body{background:var(--paper)}
 <polyline points="50,78 99,66 135,52 171,38 210,30 250,22" fill="none" stroke="#f6f1e5" stroke-width="6"/>
 <polygon points="250,22 232,18 244,34" fill="#f6f1e5"/>
 <text x="120" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="30" font-weight="bold">+1.5% STOXX</text>
-</svg><span class="src">MORNINGSTAR &middot; REUTERS</span></div>
+</svg><span class="src"><span class="num">09</span> MORNINGSTAR &middot; REUTERS</span></div>
 <h4>EUROPE RALLIES, WALL ST SHUT</h4>
 <p>Stoxx +1.5% and DAX +1.9% rebound; Wall St shut.</p>
 </div>
@@ -291,16 +292,16 @@ body{background:var(--paper)}
 <div class="art"><span class="badge chip cnf">CNF</span><svg viewBox="0 0 380 138">
 <rect x="0" y="0" width="380" height="138" fill="#16324f"/>
 <rect x="0" y="104" width="380" height="34" fill="#1c1712"/>
-<circle cx="105" cy="58" r="30" fill="#b3231b"/>
-<circle cx="105" cy="58" r="6" fill="#f6f1e5"/>
-<line x1="105" y1="28" x2="105" y2="10" stroke="#f6f1e5" stroke-width="5"/><line x1="105" y1="88" x2="105" y2="106" stroke="#f6f1e5" stroke-width="5"/>
-<line x1="75" y1="58" x2="57" y2="58" stroke="#f6f1e5" stroke-width="5"/><line x1="135" y1="58" x2="153" y2="58" stroke="#f6f1e5" stroke-width="5"/>
-<line x1="84" y1="39" x2="74" y2="30" stroke="#f6f1e5" stroke-width="5"/><line x1="126" y1="37" x2="139" y2="24" stroke="#f6f1e5" stroke-width="5"/>
-<line x1="84" y1="79" x2="71" y2="92" stroke="#f6f1e5" stroke-width="5"/><line x1="126" y1="79" x2="139" y2="92" stroke="#f6f1e5" stroke-width="5"/>
+<circle cx="170" cy="58" r="30" fill="#b3231b"/>
+<circle cx="170" cy="58" r="6" fill="#f6f1e5"/>
+<line x1="170" y1="28" x2="170" y2="10" stroke="#f6f1e5" stroke-width="5"/><line x1="170" y1="88" x2="170" y2="106" stroke="#f6f1e5" stroke-width="5"/>
+<line x1="140" y1="58" x2="122" y2="58" stroke="#f6f1e5" stroke-width="5"/><line x1="200" y1="58" x2="218" y2="58" stroke="#f6f1e5" stroke-width="5"/>
+<line x1="149" y1="39" x2="139" y2="30" stroke="#f6f1e5" stroke-width="5"/><line x1="191" y1="37" x2="204" y2="24" stroke="#f6f1e5" stroke-width="5"/>
+<line x1="149" y1="79" x2="136" y2="92" stroke="#f6f1e5" stroke-width="5"/><line x1="191" y1="79" x2="204" y2="92" stroke="#f6f1e5" stroke-width="5"/>
 <rect x="220" y="34" width="120" height="66" fill="#f6f1e5"/>
 <path d="M228 96 L236 62 L252 82 L264 50 L282 76 L300 58 L318 88 L332 66 L332 96 Z" fill="#16324f"/>
 <text x="100" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="28" font-weight="bold">12,000 CASES</text>
-</svg><span class="src">REUTERS</span></div>
+</svg><span class="src"><span class="num">10</span> REUTERS</span></div>
 <h4>DRC EBOLA 12,000+</h4>
 <p>Confirmed cases pass 12,000, the second-largest outbreak.</p>
 </div>
@@ -315,7 +316,7 @@ body{background:var(--paper)}
 <polyline points="220,92 250,64 280,72 316,34" fill="none" stroke="#b3231b" stroke-width="7"/>
 <polygon points="316,34 296,34 308,50" fill="#b3231b"/>
 <text x="130" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="34" font-weight="bold">3.25%</text>
-</svg><span class="src">BANK OF KOREA</span></div>
+</svg><span class="src"><span class="num">11</span> BANK OF KOREA</span></div>
 <h4>BANK OF KOREA HIKES</h4>
 <p>Rate up 25bp to 3.25% on AI chip demand.</p>
 </div>
@@ -329,7 +330,7 @@ body{background:var(--paper)}
 <rect x="200" y="60" width="120" height="12" fill="#b3231b"/>
 <rect x="296" y="40" width="36" height="32" fill="#b3231b"/><rect x="200" y="56" width="14" height="20" fill="#b3231b"/>
 <text x="110" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="30" font-weight="bold">CASE 4000</text>
-</svg><span class="src">OPEN CHRONICLE</span></div>
+</svg><span class="src"><span class="num">12</span> OPEN CHRONICLE</span></div>
 <h4>NETANYAHU CASE WOBBLES</h4>
 <p>Judges tell prosecutors conviction chances look low.</p>
 </div>
@@ -343,52 +344,53 @@ body{background:var(--paper)}
 <polygon points="240,80 260,52 278,52 262,80" fill="#f6f1e5"/>
 <circle cx="90" cy="72" r="8" fill="#b3231b"/><circle cx="280" cy="46" r="8" fill="#b3231b"/>
 <text x="130" y="128" fill="#f6f1e5" font-family="DejaVu Sans" font-size="34" font-weight="bold">$622M</text>
-</svg><span class="src">WASHINGTON</span></div>
+</svg><span class="src"><span class="num">13</span> US STATE DEPT</span></div>
 <h4>US OKs $622M F-16 PACKAGE</h4>
 <p>US approves a ~$622m F-16 support package for Ukraine.</p>
 </div>
 </div>
 <style>
 /* map */
-.mapsec{margin-top:4px;border-top:4px solid var(--ink);padding-top:2px}
+.mapsec{margin-top:2px;border-top:4px solid var(--ink);padding-top:1px}
 .mapsec .maptitle{display:flex;justify-content:space-between;align-items:baseline;
   font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:25px}
 .mapsec .maptitle span:last-child{color:var(--red)}
+.mapsec .maptitle .mid{font-size:20px;color:var(--ink);letter-spacing:1px}
 .maprow{display:flex;gap:24px;margin-top:4px}
 .maprow svg.map{width:1180px;height:144px;flex:none}
-.hormuz{flex:1;border:3px solid var(--ink);padding:10px 14px}
+.hormuz{flex:1;border:3px solid var(--ink);padding:8px 14px}
 .hormuz h3{font-family:"DejaVu Sans",sans-serif;font-size:26px;letter-spacing:1px}
-.hormuz .steps{display:flex;align-items:center;gap:8px;margin-top:10px}
+.hormuz .steps{display:flex;align-items:center;gap:8px;margin-top:6px}
 .hormuz .step{flex:1;text-align:center;font-family:"DejaVu Sans",sans-serif;
   font-weight:bold;font-size:21px;line-height:1.25;padding:8px 4px}
 .hormuz .step.n{background:var(--navy);color:var(--paper)}
 .hormuz .step.r{background:var(--red);color:var(--paper)}
 .hormuz .arr{font-size:30px;color:var(--red);font-weight:bold}
-.hormuz p{font-family:"DejaVu Sans",sans-serif;font-size:21px;line-height:1.35;margin-top:10px}
+.hormuz p{font-family:"DejaVu Sans",sans-serif;font-size:21px;line-height:1.35;margin-top:6px}
 /* also */
-.also{margin-top:4px}
+.also{margin-top:2px}
 .also .atitle{display:flex;justify-content:space-between;align-items:baseline;
   font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:25px}
 .also .atitle span:first-child{color:var(--red)}
 .also .cols{display:flex;gap:24px;margin-top:4px}
-.also .col{flex:1;font-family:"DejaVu Sans",sans-serif;font-size:22px;line-height:1.18}
-.also .col div{padding:2px 0}
+.also .col{flex:1;font-family:"DejaVu Sans",sans-serif;font-size:20px;line-height:1.15}
+.also .col div{padding:1px 0}
 .also .col b{color:var(--red)}
 .also .col .b2{color:var(--navy)}
 /* date check */
-.dc{margin-top:6px;border:4px solid var(--red);padding:4px 14px 6px}
+.dc{margin-top:2px;border:4px solid var(--red);padding:3px 14px 5px}
 .dc h2{color:var(--red);font-family:"DejaVu Sans",sans-serif;font-size:25px;letter-spacing:1px}
 .dc p{font-family:"DejaVu Sans",sans-serif;font-size:22px;line-height:1.25;margin-top:3px}
 .dc p b{color:var(--red)}
 /* footer */
-.foot{margin-top:3px;border-top:4px solid var(--ink);padding-top:3px;
+.foot{margin-top:2px;border-top:4px solid var(--ink);padding-top:2px;
   font-family:"DejaVu Sans",sans-serif;font-weight:bold;font-size:20px;
   display:flex;justify-content:space-between}
 .foot span:last-child{font-weight:normal;font-size:19px}
 </style>
 
 <div class="mapsec">
-<div class="maptitle"><span>THE WORLD &mdash; WHERE IT HAPPENED</span><span>PINS 01&ndash;13 = STORIES 01&ndash;13</span></div>
+<div class="maptitle"><span>THE WORLD &mdash; WHERE IT HAPPENED</span><span class="mid">ORIGINAL VECTOR ILLUSTRATIONS</span><span>PINS 01&ndash;13 = STORIES 01&ndash;13</span></div>
 <div class="maprow">
 <svg class="map" viewBox="0 -16 2048 376">
 <g fill="#f6f1e5" stroke="#16324f" stroke-width="3">
@@ -410,8 +412,8 @@ body{background:var(--paper)}
 <text x="180" y="42">NORTH AMERICA</text>
 <text x="520" y="306">SOUTH AMERICA</text>
 <text x="990" y="252">AFRICA</text>
-<text x="990" y="26">EUROPE</text>
-<text x="1400" y="140">ASIA</text>
+<text x="990" y="18">EUROPE</text>
+<text x="1560" y="40">ASIA</text>
 <text x="1640" y="326">AUSTRALIA</text>
 </g>
 <g stroke="#b3231b" stroke-width="2.5">
@@ -425,7 +427,7 @@ body{background:var(--paper)}
 <circle cx="966.5" cy="62.7" r="4"/><circle cx="1553.1" cy="190.7" r="4"/><circle cx="1689.6" cy="100" r="4"/>
 <circle cx="1165.1" cy="114.4" r="4"/>
 </g>
-<g font-family="DejaVu Sans" font-size="30" font-weight="bold" fill="#f6f1e5" text-anchor="middle">
+<g font-family="DejaVu Sans" font-size="34" font-weight="bold" fill="#f6f1e5" text-anchor="middle">
 <circle cx="1274.3" cy="129.3" r="26" fill="#b3231b" stroke="#f6f1e5" stroke-width="3"/><text x="1274.3" y="140.3">01</text>
 <circle cx="1662" cy="78" r="26" fill="#b3231b" stroke="#f6f1e5" stroke-width="3"/><text x="1662" y="89">02</text>
 <circle cx="1578.7" cy="218.4" r="26" fill="#b3231b" stroke="#f6f1e5" stroke-width="3"/><text x="1578.7" y="229.4">03</text>
@@ -442,7 +444,7 @@ body{background:var(--paper)}
 </g>
 </svg>
 <div class="hormuz">
-<h3>STRAIT OF HORMUZ &mdash; HOW IT ESCALATED</h3>
+<h3>STRAIT OF HORMUZ <span class="chip clm">CLAIM</span></h3>
 <div class="steps">
 <div class="step n">MINES IN<br>THE STRAIT</div><div class="arr">&rarr;</div>
 <div class="step r">2 TANKERS HIT<br>THU 26 NOV</div><div class="arr">&rarr;</div>
@@ -454,39 +456,33 @@ body{background:var(--paper)}
 </div>
 
 <div class="also">
-<div class="atitle"><span>ALSO ON THURSDAY &mdash; 14&ndash;27</span><span>ORIGINAL VECTOR ILLUSTRATIONS</span></div>
+<div class="atitle"><span>ALSO ON THURSDAY &mdash; 14&ndash;27</span></div>
 <div class="cols">
 <div class="col">
 <div><b>14 CNF</b> Kushner: war could escalate.</div>
 <div><b>15 CNF</b> Myanmar rejects ICJ ruling.</div>
 <div><b>16 REP</b> Nepal: Indians declared dead.</div>
 <div><b>17 REP</b> Sri Lanka grave probe calls.</div>
-</div>
-<div class="col">
 <div><b>18 REP</b> S. Leone maternal deaths fall.</div>
 <div><b>19 REP</b> Lebanon to open 2nd airport.</div>
-<div><b>20 REP</b> Kenyan cult leader convicted.</div>
-<div><b>21 REP</b> Sudan families return home.</div>
+<div><b>20 REP</b> Kenyan cult leader convicted of new charges.</div>
 </div>
 <div class="col">
+<div><b>21 REP</b> Sudan families return home.</div>
 <div><b>22 REP</b> Gaza meningitis spreads.</div>
 <div><b>23 REP</b> Diesel tanker sinks near Ibiza.</div>
 <div><b>24 REP</b> Canaries migrant surge.</div>
 <div><b>25 OFF</b> Bank of England record out.</div>
-</div>
-<div class="col">
 <div><b>26 OFF</b> Australia investment up 12.2%.</div>
 <div><b>27 REP</b> Colombia aid after Villavicencio.</div>
-<div><b class="b2">&nbsp;</b> &nbsp;</div>
-<div><b class="b2">&nbsp;</b> &nbsp;</div>
 </div>
 </div>
 </div>
 
 <div class="dc">
 <h2>DATE CHECK &mdash; LEFT OUT</h2>
-<p><b>LEFT OUT:</b> Hormuz first claim (4 tankers + LNG carrier) &mdash; Wed 25 Nov &middot; Ras Tanura claim first made &mdash; Wed 25 Nov &middot; Trump&ndash;Rutte statement &mdash; late Wed 25 Nov &middot; Savasleyka strike &mdash; 24&ndash;25 Nov &middot; Russia $606bn budget &mdash; Mon 24 Nov &middot; US tariff plan &mdash; Wed 25 Nov &middot; Australia Duty of Care &mdash; Wed 25 Nov &middot; Solomon treaty, Tiangong boarding, Cairo fire, Macy&rsquo;s parade &mdash; 25 Nov &middot; COP31 collapse, no deal &mdash; 23 Nov &middot; Chen Jining probe &mdash; 24 Nov &middot; Huawei verdict &mdash; Tue 24 Nov &middot; SpaceX approval; Merz warning &mdash; Wed 25 Nov &middot; Hong Kong fire, one year on &mdash; 25 Nov page &middot; Iraq verdicts &mdash; outcome not verified &middot; Andy Taylor death &mdash; unconfirmed, not used.</p>
-<p><b>NOT YET:</b> Spain votes Sun 29 Nov &middot; OPEC+ ministers meet Sun 29 Nov &middot; EU summit Fri 27 Nov &middot; Hasina returns 16 Dec &middot; Huawei sentencing 14 Sept 2027 &middot; tariff hearing 25 Jan.</p>
+<p><b>LEFT OUT:</b> Hormuz first claim (4 tankers + LNG carrier) &mdash; Wed 25 Nov &middot; Ras Tanura claim first made &mdash; Wed 25 Nov &middot; Trump&ndash;Rutte statement &mdash; late Wed 25 Nov &middot; Savasleyka strike &mdash; 24&ndash;25 Nov &middot; Russia $606bn budget &mdash; Mon 24 Nov &middot; US tariff plan &mdash; Wed 25 Nov &middot; Australia Digital Duty of Care &mdash; Wed 25 Nov &middot; Solomon treaty, Tiangong boarding, Cairo fire, Macy&rsquo;s parade &mdash; 25 Nov &middot; COP31 collapse, no deal &mdash; 23 Nov &middot; Chen Jining probe &mdash; 24 Nov &middot; Huawei verdict &mdash; Tue 24 Nov &middot; SpaceX approval; Merz warning &mdash; Wed 25 Nov &middot; Hong Kong fire, one year on &mdash; 25 Nov page &middot; Iraq verdicts &mdash; outcome not verified &middot; Andy Taylor death &mdash; unconfirmed, not used.</p>
+<p><b>NOT YET:</b> Spain votes Sun 29 Nov &middot; OPEC+ ministers meet Sun 29 Nov &middot; EU summit Fri 27 Nov<br>Hasina returns 16 Dec &middot; Huawei sentencing 14 Sept 2027 &middot; Tariff hearing 25&nbsp;Jan&nbsp;2027.</p>
 </div>
 
 <div class="foot"><span>CONFIRMED 10 &middot; OFFICIAL 5 &middot; REPORTED 11 &middot; CLAIM 1 &nbsp;=&nbsp; 27 STORIES</span>
